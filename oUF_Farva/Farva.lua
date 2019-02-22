@@ -670,16 +670,20 @@ local UnitSpecific = {
 			if cfg.showExperienceBar then
 				if UnitLevel('player') < MAX_PLAYER_LEVEL then
 					htext:SetPoint('RIGHT', 2, -31)
+					if useCastbar==true then
 					self.Castbar:SetAllPoints(self.Health)
 					self.Castbar.Text:SetPoint("TOPLEFT", self.Power, "BOTTOMLEFT", 0, -19)
 					self.Castbar.Time:SetPoint("BOTTOMLEFT", self.Castbar.Text, "BOTTOMRIGHT", 2, 0)
 					self.Castbar.Time2:SetPoint("BOTTOMLEFT", self.Castbar.Time, "BOTTOMRIGHT", 0, 0)
+					else end
 				else
 				htext:SetPoint('RIGHT', 2, -19)
+				if useCastbar==true then
 				self.Castbar:SetAllPoints(self.Health)
 				self.Castbar.Text:SetPoint("TOPLEFT", self.Power, "BOTTOMLEFT", 0, -2)
 				self.Castbar.Time:SetPoint("BOTTOMLEFT", self.Castbar.Text, "BOTTOMRIGHT", 2, 0)
 				self.Castbar.Time2:SetPoint("BOTTOMLEFT", self.Castbar.Time, "BOTTOMRIGHT", 0, 0)
+				else end
 				end
 			end
 		htext.frequentUpdates = .1
